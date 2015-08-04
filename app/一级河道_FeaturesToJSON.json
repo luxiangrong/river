@@ -1,0 +1,177 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID" : "OBJECTID",
+    "河流名称" : "河流名称",
+    "河道等级" : "河道等级",
+    "河道编号" : "河道编号",
+    "测量长度_公里" : "测量长度(公里)",
+    "起点" : "起点",
+    "终点" : "终点",
+    "流经乡镇" : "流经乡镇",
+    "设计底高程（m）" : "设计底高程(m)",
+    "设计底宽（m）" : "设计底宽(m)",
+    "设计口宽（m）" : "设计口宽(m)",
+    "设计边坡" : "设计边坡",
+    "实际底高程（m）" : "实际底高程(m)",
+    "实际底宽（m）" : "实际底宽(m)",
+    "实际口宽（m）" : "实际口宽(m)",
+    "实际边坡" : "实际边坡",
+    "淤积量（万立方米）" : "淤积量（万立方米）",
+    "清淤估算（万元）" : "清淤估算(万元)",
+    "备注" : "备注",
+    "SHAPE_Length" : "SHAPE_Length"
+  },
+  "geometryType" : "esriGeometryPolyline",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "河流名称",
+      "type" : "esriFieldTypeString",
+      "alias" : "河流名称",
+      "length" : 50
+    },
+    {
+      "name" : "河道等级",
+      "type" : "esriFieldTypeString",
+      "alias" : "河道等级",
+      "length" : 50
+    },
+    {
+      "name" : "河道编号",
+      "type" : "esriFieldTypeString",
+      "alias" : "河道编号",
+      "length" : 50
+    },
+    {
+      "name" : "测量长度_公里",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "测量长度(公里)"
+    },
+    {
+      "name" : "起点",
+      "type" : "esriFieldTypeString",
+      "alias" : "起点",
+      "length" : 50
+    },
+    {
+      "name" : "终点",
+      "type" : "esriFieldTypeString",
+      "alias" : "终点",
+      "length" : 50
+    },
+    {
+      "name" : "流经乡镇",
+      "type" : "esriFieldTypeString",
+      "alias" : "流经乡镇",
+      "length" : 50
+    },
+    {
+      "name" : "设计底高程（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "设计底高程(m)",
+      "length" : 50
+    },
+    {
+      "name" : "设计底宽（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "设计底宽(m)",
+      "length" : 50
+    },
+    {
+      "name" : "设计口宽（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "设计口宽(m)",
+      "length" : 50
+    },
+    {
+      "name" : "设计边坡",
+      "type" : "esriFieldTypeString",
+      "alias" : "设计边坡",
+      "length" : 50
+    },
+    {
+      "name" : "实际底高程（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "实际底高程(m)",
+      "length" : 50
+    },
+    {
+      "name" : "实际底宽（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "实际底宽(m)",
+      "length" : 50
+    },
+    {
+      "name" : "实际口宽（m）",
+      "type" : "esriFieldTypeString",
+      "alias" : "实际口宽(m)",
+      "length" : 50
+    },
+    {
+      "name" : "实际边坡",
+      "type" : "esriFieldTypeString",
+      "alias" : "实际边坡",
+      "length" : 50
+    },
+    {
+      "name" : "淤积量（万立方米）",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "淤积量（万立方米）"
+    },
+    {
+      "name" : "清淤估算（万元）",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "清淤估算(万元)"
+    },
+    {
+      "name" : "备注",
+      "type" : "esriFieldTypeString",
+      "alias" : "备注",
+      "length" : 50
+    },
+    {
+      "name" : "SHAPE_Length",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "SHAPE_Length"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "河流名称" : "通启运河",
+        "河道等级" : "一级",
+        "河道编号" : "一1",
+        "测量长度_公里" : 31.649999999999999,
+        "起点" : "塘芦港新闸",
+        "终点" : "启海交界",
+        "流经乡镇" : "王鲍合作少直近海",
+        "设计底高程（m）" : "-1.24~-0.8",
+        "设计底宽（m）" : "15~65",
+        "设计口宽（m）" : "42.5~98.2",
+        "设计边坡" : "1:2.5~3",
+        "实际底高程（m）" : "-1.2~`-0.5",
+        "实际底宽（m）" : "13~66",
+        "实际口宽（m）" : "45~101",
+        "实际边坡" : null,
+        "淤积量（万立方米）" : 89.400000000000006,
+        "清淤估算（万元）" : null,
+        "备注" : null,
+        "SHAPE_Length" : 0.34176303812354708
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              121.50126727129725,
+              31.966098404487923
+            ]
