@@ -47,13 +47,9 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
-      // sass: {
-      //   files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-      //   tasks: ['sass:server', 'postcss']
-      // },
-      compass: {
-          files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-          tasks: ['compass:server', 'autoprefixer']
+      sass: {
+        files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:server', 'postcss']
       },
       styles: {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
@@ -190,34 +186,6 @@ module.exports = function (grunt) {
           dest: '.tmp/styles',
           ext: '.css'
         }]
-      }
-    },
-
-    // 使用compass替换默认的scss任务
-    compass: {
-      options: {
-        sassDir: '<%= config.app %>/styles',
-        cssDir: '.tmp/styles',
-        imagesDir: '<%= config.app %>/images',
-        javascriptsDir: '<%= config.app %>/scripts',
-        fontsDir: '<%= config.app %>/styles/fonts',
-        generatedImagesDir: '.tmp/images/generated',
-        importPath: 'bower_components',
-        httpImagesPath: '../images',
-        httpGeneratedImagesPath: '../images/generated',
-        httpFontsPath: 'fonts',
-        relativeAssets: false,
-        assetCacheBuster: false
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= config.dist %>/images/generated'
-        }
-      },
-      server: {
-        options: {
-          debugInfo: true
-        }
       }
     },
 
@@ -407,16 +375,14 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'babel:dist',
-        // 'sass:server'
-        'compass:server'
+        'sass:server'
       ],
       test: [
         'babel'
       ],
       dist: [
         'babel',
-        // 'sass',
-        'compass',
+        'sass',
         'imagemin',
         'svgmin'
       ]
