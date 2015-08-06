@@ -1,2 +1,7 @@
-// jshint devel:true
-console.log('\'Allo \'Allo!');
+define(function (require) {
+    return {
+    	sayHello: function(){
+    		console.log('hello requireJS!');
+    	}
+    }
+});

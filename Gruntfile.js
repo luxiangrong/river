@@ -18,6 +18,8 @@ module.exports = function (grunt) {
       useminPrepare: 'grunt-usemin'
   });
 
+  grunt.loadNpmTasks('grunt-bower-task');
+
   // Configurable paths
   var config = {
     app: 'app',
@@ -56,6 +58,71 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'postcss']
       }
     },
+
+    
+    requirejs: {
+      std: {
+        options: {
+          appDir: '<%= config.app %>',
+          baseUrl: 'scripts/lib',
+          paths: {
+            main: 'main',
+            jquery: 'jquery/jquery'
+          },
+          dir: '<%= config.dist %>',
+          modules: [
+            //First set up the common build layer.
+            // {
+            //   //module names are relative to baseUrl
+            //   name: '../common',
+            //   //List common dependencies here. Only need to list
+            //   //top level dependencies, "include" will find
+            //   //nested dependencies.
+            //   include: [
+            //     'jquery',
+            //     'app/lib',
+            //     'app/controller/Base',
+            //     'app/model/Base'
+            //   ]
+            // },
+            //Now set up a build layer for each page, but exclude
+            //the common one. "exclude" will exclude nested
+            //the nested, built dependencies from "common". Any
+            //"exclude" that includes built modules should be
+            //listed before the build layer that wants to exclude it.
+            //"include" the appropriate "app/main*" module since by default
+            //it will not get added to the build since it is loaded by a nested
+            //require in the page*.js files.
+            {
+              //module names are relative to baseUrl/paths config
+              name: '../page1',
+              include: ['jquery','main' ]
+            },
+            // {
+            //   //module names are relative to baseUrl
+            //   name: "../page2",
+            //   include: ["app/main2"],
+            //   exclude: ["../common"]
+            // }
+          ]
+        }
+      }
+    },
+
+    bower: {
+      install: {
+        options: {
+          targetDir: '<%= config.app %>/scripts/lib',
+          layout: 'byType',
+          install: true,
+          verbose: false,
+          cleanTargetDir: true,
+          cleanBowerDir: false,
+          bowerOptions: {}
+        }
+      }
+    },
+
 
     browserSync: {
       options: {
@@ -145,7 +212,9 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/scripts',
-          src: '{,*/}*.js',
+          src: [
+              '{,*/}*.js'
+          ],
           dest: '.tmp/scripts',
           ext: '.js'
         }]
@@ -428,6 +497,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'requirejs',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -437,9 +507,9 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'modernizr',
-    'filerev',
+    // 'filerev',
     'usemin',
-    'htmlmin'
+    // 'htmlmin'
   ]);
 
   grunt.registerTask('default', [
